@@ -1,29 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ehorvat <ehorvat@student.42barcelona.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/12 19:42:30 by ehorvat           #+#    #+#             */
-/*   Updated: 2026/05/13 15:10:38 by ehorvat          ###   ########.fr       */
+/*   Created: 2026/05/13 15:11:46 by ehorvat           #+#    #+#             */
+/*   Updated: 2026/05/13 15:21:04 by ehorvat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incs/push_swap.h"
 
-int	main(int argc, char *argv[])
+t_bool	ft_isdigit(int c)
 {
-	t_stack	a;
-	t_stack	b;
-
-	a.top = NULL;
-	a.size = 0;
-	b.top = NULL;
-	b.size = 0;
-	if (!ft_stack_parser(&a, argc, argv))
-		return (ft_free_stack(&a), ft_print_error(), 1);
-	ft_start_sort(&a, &b);
-	ft_free_stack(&a);
-	return (0);
+	if (c >= '0' && c <= '9')
+		return (TRUE);
+	else
+		return (FALSE);
 }
