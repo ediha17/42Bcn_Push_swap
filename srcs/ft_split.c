@@ -6,7 +6,7 @@
 /*   By: ehorvat <ehorvat@student.42barcelona.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 15:41:26 by ehorvat           #+#    #+#             */
-/*   Updated: 2026/05/13 17:49:03 by ehorvat          ###   ########.fr       */
+/*   Updated: 2026/05/16 14:58:37 by ehorvat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,16 +49,6 @@ static char	*ft_strndup(char *str, int size)
 	return (dup);
 }
 
-void	ft_free_splited_args(char **args)
-{
-	int	i;
-
-	i = 0;
-	while (args[i])
-		free(args[i++]);
-	free(args);
-}
-
 char	**ft_split(char *str, char separator)
 {
 	char	**splited_str;
@@ -78,7 +68,7 @@ char	**ft_split(char *str, char separator)
 			str++;
 		*i_ptr = ft_strndup(start_word, str - start_word);
 		if (*i_ptr == NULL)
-			return (ft_free_splited_args(splited_str), NULL);
+			return (ft_free_split(splited_str), NULL);
 		i_ptr++;
 	}
 	*i_ptr = NULL;

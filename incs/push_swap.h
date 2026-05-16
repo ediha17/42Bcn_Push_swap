@@ -6,7 +6,7 @@
 /*   By: ehorvat <ehorvat@student.42barcelona.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/03 16:40:22 by ehorvat           #+#    #+#             */
-/*   Updated: 2026/05/13 20:28:49 by ehorvat          ###   ########.fr       */
+/*   Updated: 2026/05/16 13:43:32 by ehorvat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ void	ft_start_sort(t_stack *stack_a, t_stack *stack_b);
 void	ft_print_error(void);
 t_bool	ft_isdigit(int c);
 char	**ft_split(char *str, char separator);
-void	ft_free_splited_args(char **args);
+void	ft_free_split(char **args);
+long	ft_atol(char *str, t_bool *err_flag);
 
 #endif
