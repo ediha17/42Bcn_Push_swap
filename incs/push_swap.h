@@ -6,7 +6,7 @@
 /*   By: ehorvat <ehorvat@student.42barcelona.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/03 16:40:22 by ehorvat           #+#    #+#             */
-/*   Updated: 2026/05/18 17:06:54 by ehorvat          ###   ########.fr       */
+/*   Updated: 2026/05/18 20:10:28 by ehorvat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,18 +57,38 @@ typedef struct s_stack
   +==========================+*/
 
 int		main(int argc, char *argv[]);
+
+/*-------- PARSING FUNCTIONS --------*/
+
 int		ft_count_args(char **args);
-t_bool	ft_stack_parser(t_stack *stack, int argc, char *argv[]);
-void	ft_free_stack(t_stack *stack);
-void	ft_start_sort(t_stack *stack_a, t_stack *stack_b);
-void	ft_print_error(void);
-t_bool	ft_isdigit(int c);
-char	**ft_split(char *str, char separator);
-char	**ft_get_args(int argc, char *argv[], t_bool *is_splited);
-void	ft_free_split(char **args);
+
 long	ft_atol(char *str, t_bool *err_flag);
 long	*ft_args_to_long(char **args, int size);
+
+char	**ft_split(char *str, char separator);
+char	**ft_get_args(int argc, char *argv[], t_bool *is_splited);
+
+void	ft_print_error(void);
+void	ft_free_split(char **args);
+void	ft_free_stack(t_stack *stack);
+
+t_bool	ft_isdigit(int c);
 t_bool	ft_nums_checker(char **args);
 t_bool	ft_have_duplicates(long *nums, int size);
+t_bool	ft_stack_parser(t_stack *stack, int argc, char *argv[]);
+
+/*-------- SORTING FUNCTIONS --------*/
+
+void	ft_start_sort(t_stack *stack_a, t_stack *stack_b);
+
+int		ft_find_lowest(t_stack *stack);
+
+void	ft_sa(t_stack *stack);
+
+void	ft_pa(t_stack *stack_a, t_stack *stack_b);
+void	ft_pb(t_stack *stack_a, t_stack *stack_b);
+
+void	ft_ra(t_stack *stack);
+void	ft_rra(t_stack *stack);
 
 #endif
