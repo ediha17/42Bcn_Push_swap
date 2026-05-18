@@ -9,7 +9,7 @@ NAME = push_swap
 # +==========================+
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -I $(INC_DIR)
+CFLAGS = -Wall -Wextra -Werror -g -I $(INC_DIR)
 
 # +==========================+
 # |       DIRECTORIES        |

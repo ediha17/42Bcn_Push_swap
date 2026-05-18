@@ -6,7 +6,7 @@
 /*   By: ehorvat <ehorvat@student.42barcelona.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 15:11:46 by ehorvat           #+#    #+#             */
-/*   Updated: 2026/05/15 22:09:44 by ehorvat          ###   ########.fr       */
+/*   Updated: 2026/05/18 13:33:21 by ehorvat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 
 t_bool	ft_isdigit(int c)
 {
-	if (c >= '0' && c <= '9')
-		return (TRUE);
-	else
-		return (FALSE);
+	return (c >= '0' && c <= '9');
+}
+
+void	ft_print_error(void)
+{
+	write(2, "Error\n", 6);
 }
 
 long	ft_atol(char *str, t_bool *err_flag)
@@ -45,4 +47,48 @@ long	ft_atol(char *str, t_bool *err_flag)
 	if (str[i] != '\0' || (sign * digit) < INT_MIN || (sign * digit) > INT_MAX)
 		return ((*err_flag = TRUE), 0);
 	return (sign * digit);
+}
+
+t_bool	ft_have_duplicates(long *nums, int size)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < size)
+	{
+		j = i + 1;
+		while (j < size)
+		{
+			if (nums[i] == nums[j])
+				return (TRUE);
+			j++;
+		}
+		i++;
+	}
+	return (FALSE);
+}
+
+t_bool	ft_nums_checker(char **args)
+{
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	while (args[i])
+	{
+		j = 0;
+		if (args[i][j] == '-' || args[i][j] == '+')
+			j++;
+		if (args[i][j] == '\0')
+			return (FALSE);
+		while (args[i][j])
+		{
+			if (!ft_isdigit(args[i][j]))
+				return (FALSE);
+			j++;
+		}
+		i++;
+	}
+	return (TRUE);
 }
