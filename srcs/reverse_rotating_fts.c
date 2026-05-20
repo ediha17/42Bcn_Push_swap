@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   other_sorting_fts.c                                :+:      :+:    :+:   */
+/*   reverse_rotating_fts.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ehorvat <ehorvat@student.42barcelona.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/18 21:02:43 by ehorvat           #+#    #+#             */
-/*   Updated: 2026/05/20 21:25:38 by ehorvat          ###   ########.fr       */
+/*   Created: 2026/05/20 16:57:48 by ehorvat           #+#    #+#             */
+/*   Updated: 2026/05/20 20:59:07 by ehorvat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incs/push_swap.h"
 
-int	ft_find_lowest(t_stack *stack)
+static void	ft_reverse_rotate(t_stack *stack)
 {
-	t_number	*tmp;
-	int			lowest_val;
-	int			lowest_pos;
-	int			i;
+	t_number	*last;
+	t_number	*before_last;
 
-	tmp = stack->top;
-	lowest_val = tmp->value;
-	lowest_pos = 0;
-	i = 0;
-	while (tmp)
+	if (!stack || !stack->top || !stack->top->next_n)
+		return ;
+	last = stack->top;
+	before_last = NULL;
+	while (last->next_n)
 	{
-		if (tmp->value < lowest_val)
-		{
-			lowest_val = tmp->value;
-			lowest_pos = i;
-		}
-		i++;
-		tmp = tmp->next_n;
+		before_last = last;
+		last = last->next_n;
 	}
-	return (lowest_pos);
+	last->next_n = stack->top;
+	before_last->next_n = NULL;
+	stack->top = last;
+}
+
+void	ft_rra(t_stack *stack)
+{
+	ft_reverse_rotate(stack);
+	write(1, "rra\n", 4);
 }

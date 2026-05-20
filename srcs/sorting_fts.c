@@ -6,7 +6,7 @@
 /*   By: ehorvat <ehorvat@student.42barcelona.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 12:21:07 by ehorvat           #+#    #+#             */
-/*   Updated: 2026/05/18 21:38:01 by ehorvat          ###   ########.fr       */
+/*   Updated: 2026/05/20 21:26:21 by ehorvat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,7 +116,7 @@ void	ft_start_sort(t_stack *stack_a, t_stack *stack_b)
 		ft_mini_ps(stack_a, stack_b);
 	else
 	{
-		ft_radix_sort(stack_a, stack_b);
 		ft_assign_index(stack_a);
+		ft_radix_sort(stack_a, stack_b);
 	}
 }
