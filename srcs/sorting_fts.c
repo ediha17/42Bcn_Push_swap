@@ -6,7 +6,7 @@
 /*   By: ehorvat <ehorvat@student.42barcelona.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 12:21:07 by ehorvat           #+#    #+#             */
-/*   Updated: 2026/05/20 21:26:21 by ehorvat          ###   ########.fr       */
+/*   Updated: 2026/05/20 22:05:26 by ehorvat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,22 +57,22 @@ static void	ft_sort_three(t_stack	*stack)
 	first = stack->top->value;
 	second = stack->top->next_n->value;
 	third = stack->top->next_n->next_n->value;
-	if (first < second && second > third)
-	{
-		ft_rra(stack);
+	if (first > second && first < third && second < third)
 		ft_sa(stack);
-	}
-	else if (first > second && second < third)
-		ft_sa(stack);
-	else if (first < second && second > third)
-		ft_rra(stack);
-	else if (first > second && second > third)
+	else if (first > second && first > third && second > third)
 	{
 		ft_sa(stack);
 		ft_rra(stack);
 	}
-	else
+	else if (first > second && first > third && second < third)
 		ft_ra(stack);
+	else if (first < second && first < third && second > third)
+	{
+		ft_sa(stack);
+		ft_ra(stack);
+	}
+	else if (first < second && first > third && second > third)
+		ft_rra(stack);
 }
 
 static void	ft_mini_ps(t_stack *stack_a, t_stack *stack_b)
