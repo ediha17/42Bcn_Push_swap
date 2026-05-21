@@ -20,7 +20,6 @@ The project includes a standard `Makefile`. To compile the executable, simply ru
 Bash
 
 make
-
 ```
 
 This will generate the `push_swap` executable. (You can use `make clean`, `make fclean`, and `make re` for standard object file management).
