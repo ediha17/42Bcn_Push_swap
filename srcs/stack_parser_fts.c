@@ -6,7 +6,7 @@
 /*   By: ehorvat <ehorvat@student.42barcelona.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 12:25:39 by ehorvat           #+#    #+#             */
-/*   Updated: 2026/05/18 13:33:59 by ehorvat          ###   ########.fr       */
+/*   Updated: 2026/05/21 12:31:34 by ehorvat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,5 @@ t_bool	ft_stack_parser(t_stack *stack, int argc, char *argv[])
 	if (ft_have_duplicates(parsed_nums, size)
 		|| !ft_fill_stack(stack, parsed_nums, size))
 		return (free(parsed_nums), FALSE);
-	return (TRUE);
+	return (free(parsed_nums), TRUE);
 }

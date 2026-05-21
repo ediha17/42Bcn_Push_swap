@@ -6,7 +6,7 @@
 /*   By: ehorvat <ehorvat@student.42barcelona.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/03 16:40:22 by ehorvat           #+#    #+#             */
-/*   Updated: 2026/05/20 21:40:06 by ehorvat          ###   ########.fr       */
+/*   Updated: 2026/05/21 11:22:21 by ehorvat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,8 @@ t_bool	ft_stack_parser(t_stack *stack, int argc, char *argv[]);
 void	ft_start_sort(t_stack *stack_a, t_stack *stack_b);
 
 int		ft_find_lowest(t_stack *stack);
+
+void	ft_radix_sort(t_stack *stack_a, t_stack *stack_b);
 
 void	ft_sa(t_stack *stack);
 

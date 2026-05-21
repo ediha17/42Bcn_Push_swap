@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   split_fts.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ehorvat <ehorvat@student.42barcelona.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 15:41:26 by ehorvat           #+#    #+#             */
-/*   Updated: 2026/05/16 14:58:37 by ehorvat          ###   ########.fr       */
+/*   Updated: 2026/05/21 12:22:37 by ehorvat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ char	**ft_split(char *str, char separator)
 	{
 		while (*str && *str == separator)
 			str++;
+		if (!*str)
+			break;
 		start_word = str;
 		while (*str && *str != separator)
 			str++;

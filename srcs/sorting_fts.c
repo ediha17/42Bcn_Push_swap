@@ -6,7 +6,7 @@
 /*   By: ehorvat <ehorvat@student.42barcelona.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 12:21:07 by ehorvat           #+#    #+#             */
-/*   Updated: 2026/05/20 22:05:26 by ehorvat          ###   ########.fr       */
+/*   Updated: 2026/05/21 09:19:01 by ehorvat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static void	ft_assign_index(t_stack *stack)
 	while (current)
 	{
 		idx = 0;
-		cmp = current->next_n;
+		cmp = stack->top;
 		while (cmp)
 		{
 			if (current->value > cmp->value)
